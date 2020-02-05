@@ -8,6 +8,7 @@
 ### Association
 - has-many :messages
 - has-many :users-groups
+- has_many :groups, through: :users_groups
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -27,6 +28,7 @@
 ### Association
 - has-many :messags
 - has-many :users-groups
+- has_many :users, through: :users_groups
 
 ## users-groupsテーブル
 |Column|Type|Options|
