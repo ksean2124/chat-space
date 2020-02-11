@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+$color:#ffffff;
+
+@mixin df {
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@import "main_chat";
+@import "side_bar";
