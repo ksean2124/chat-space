@@ -9,7 +9,7 @@
     height: 100px;
     @include df;
     align-items: center;
-    &___block{
+    &__block{
       background-color: #253141;
       height: 20px;
       width: 260px;
@@ -17,15 +17,15 @@
       @include df;
       align-items: center;
       justify-content: space-between;
-      &____name{
+      &__name{
         color: $color;
       }
-      &____icon{
+      &__icon{
         width: 60px;
         text-align: right;
         @include df;
         justify-content: flex-end;
-        &____newgroup{ 
+        &__newgroup{ 
           margin-right: 5px;
         }
         a{
@@ -39,11 +39,11 @@
   &__groupname{
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-    &___box{
+    &__box{
       height: 91px;
       width: 300px;
       position: relative;
-      &____groups{
+      &__groups{
         width: 260px;
         color: $color;
         font-size: 15px;
@@ -51,7 +51,7 @@
         top: 20px;
         left: 20px;
       }
-      &____message{
+      &__message{
         width: 260px;
         color: $color;
         font-size: 11px;
