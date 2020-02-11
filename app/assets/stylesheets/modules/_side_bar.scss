@@ -1,0 +1,65 @@
+
+.sidebar{
+  width: 300px;
+  background-color: #253141;
+  height: 100vh;
+  float: left;
+  &__user{
+    background-color: #253141;
+    height: 100px;
+    @include df;
+    align-items: center;
+    &__block{
+      background-color: #253141;
+      height: 20px;
+      width: 260px;
+      margin: 0 20px;
+      @include df;
+      align-items: center;
+      justify-content: space-between;
+      &__name{
+        color: $color;
+      }
+      &__icon{
+        width: 60px;
+        text-align: right;
+        @include df;
+        justify-content: flex-end;
+        &__newgroup{ 
+          margin-right: 5px;
+        }
+        a{
+          text-decoration: none;
+          color: $color;
+        }
+      }
+    }
+
+  }
+  &__groupname{
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    &__box{
+      height: 91px;
+      width: 300px;
+      position: relative;
+      &__groups{
+        width: 260px;
+        color: $color;
+        font-size: 15px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+      &__message{
+        width: 260px;
+        color: $color;
+        font-size: 11px;
+        position: absolute;
+        top: 40px;
+        left: 20px;
+      }
+    }
+    
+  }
+}
