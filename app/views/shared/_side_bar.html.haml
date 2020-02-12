@@ -2,13 +2,13 @@
   .sidebar__user
     .sidebar__user__block
       .sidebar__user__block__name
-        masa
+        = current_user.name
       .sidebar__user__block__icon
         .sidebar__user__block__icon__newgroup
           = link_to "#" do
             = icon('fas', 'edit')
         .sidebar__user__block__icon__set
-          = link_to "#" do
+          = link_to edit_user_path(current_user) do
             = icon('fas', 'cog')
   .sidebar__groupname
     .sidebar__groupname__box
