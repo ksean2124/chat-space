@@ -23,6 +23,10 @@
         color: #999999;
         font-size: 12px;
         @include df;
+        li{
+          float: left;
+          padding-right: 5px;
+        }
       }
     }
     a{
@@ -66,8 +70,10 @@
     padding: 20px 40px;
     background-color: #ddd;
     &__new-message{
-      @include df;
       width: 100%;
+      form{
+        display: flex;
+      }
       &__box{
         background-color: white;
         position: relative;
@@ -77,19 +83,15 @@
           width: 100%;
           padding: 0 40px 0 10px;
           line-height: 50px;
-          color: #999999;
         }
         &__image{
           position: absolute;
           top: 10px;
           right: 10px;
           font-size: 1.3rem;
-        }
-        input{
-          display: none;
-        }
-        .box__image{
-          cursor: pointer;
+          input{
+            display: none;
+          }
         }
       }
       &__send-btn {

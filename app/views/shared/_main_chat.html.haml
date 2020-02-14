@@ -1,37 +1,29 @@
 .chat-main
- .chat-main__group-name
-  .chat-main__group-name__left
-   .chat-main__group-name__left__name
-    test
-   .chat-main__group-name__left__member
-    Member :
-    .chat-main__group-name__left__member__names
-    masa
-  = link_to "#", class: "contents__btn" do
-   Edit
- .chat-main__message-list
-  .chat-main__message-list__data
-   .chat-main__message-list__data__name
-    masa
-   .chat-main__message-list__data__date
-    2020/02/10(Mon) 13:30:55
-  .chat-main__message-list__say
-   おはよう
-  .chat-main__message-list__data
-   .chat-main__message-list__data__name
-    ff
-   .chat-main__message-list__data__date
-    2020/02/10(Mon) 13:50:43
-  .chat-main__message-list__say
-   おはようございます。
- .chat-main__massage-form
-  .chat-main__massage-form__new-message
-   .chat-main__massage-form__new-message__box
-    .chat-main__massage-form__new-message__box__text
-     type a message
-    .chat-main__massage-form__new-message__box__image
-     %label{class: "box__image"}
-      = icon('fas', 'image')
-      %input{type: "file",class: "box_image_file"}
-   .chat-main__massage-form__new-message__send-btn  
-    Send
+  .chat-main__group-name
+    .chat-main__group-name__left
+      .chat-main__group-name__left__name
+        %h1 #{@group.name}
+      .chat-main__group-name__left__member
+        Member :
+        .chat-main__group-name__left__member__names
+          %ul
+            - @group.users.each do |user|
+              %li= user.name
+
+    = link_to edit_group_path(current_user), class: "contents__btn" do
+      Edit
+
+  .chat-main__message-list
+    = render @messages
+    -# _message.html.hamlを呼び出す
+    -# @messagesをmessage一つずつに取り出して部分テンプレート内で使う
+
+  .chat-main__massage-form
+    .chat-main__massage-form__new-message
+      = form_for [@group, @message] do |f|
+        .chat-main__massage-form__new-message__box
+          = f.text_field :content, class: 'chat-main__massage-form__new-message__box__text', placeholder: 'type a message'
+          = f.label :image, class: "chat-main__massage-form__new-message__box__image" do
+            = icon('fas', 'image')
+            = f.file_field :image, class: 'chat-main__massage-form__new-message__box__image__file'
+        = f.submit 'Send', class: 'chat-main__massage-form__new-message__send-btn'
