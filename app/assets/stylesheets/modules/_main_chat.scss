@@ -44,6 +44,7 @@
     background-color:#fafafa;
     height: calc(100vh - 190px);
     padding: 0 40px;
+    overflow: scroll;
     &__data{
       padding-bottom: 12px;
       @include df;
