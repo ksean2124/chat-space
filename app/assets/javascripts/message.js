@@ -86,9 +86,6 @@ $('#new_message').on('submit', function(e){
         $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
         }
       })
-      .fail(function() {
-        console.log('error');
-      });
     };
     if (document.location.href.match(/\/groups\/\d+\/messages/)) {
       setInterval(reloadMessages, 7000);
